@@ -42,8 +42,8 @@ _run_python_code() {
 _run_pandapack_git() {
     $(_run_python_code 'from git import Repo
 import sys
-OFFICIAL_UPSTREAM_REPO = "https://github.com/ilhammansiz/PandaPack"
-ACTIVE_BRANCH_NAME = "master"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/ilhammansiz/DEPLOY"
+ACTIVE_BRANCH_NAME = "PandaUserbot"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
