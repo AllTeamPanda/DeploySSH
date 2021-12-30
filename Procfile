@@ -1,1 +1,1 @@
-pandauserbot: bash termux_install.sh
+pandauserbot: bash Deploy (Copy).
