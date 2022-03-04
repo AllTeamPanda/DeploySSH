@@ -47,7 +47,7 @@ RUN mkdir -p /tmp/ && \
     rm -rf /tmp/rar*
 
 COPY . .
-RUN bash Text
+RUN bash Text.sh
 
 # command to run on container start
 CMD [ "bash", "termux_install.sh" ]
