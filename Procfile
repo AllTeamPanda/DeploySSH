@@ -1,1 +1,1 @@
-pandauserbot: bash termux_install.sh
+worker: bash termux_install.sh
