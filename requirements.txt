@@ -39,7 +39,6 @@ pyfiglet
 PyGithub
 pygments
 pylast
-py-tgcalls
 pymediainfo
 pySmartDL
 python-barcode
