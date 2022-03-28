@@ -16,11 +16,6 @@ RUN apt -qq install -y --no-install-recommends \
     jq
 
 
-# install node-js
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs && \
-    npm i -g npm
-
 RUN mkdir -p /tmp/ && \
     cd /tmp/ && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
