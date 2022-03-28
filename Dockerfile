@@ -1,6 +1,6 @@
 # Panda - UserBot
 
-FROM python:3.9
+FROM python:3.9-slim-buster
 
 # set the working directory in the container
 WORKDIR /app/
