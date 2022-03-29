@@ -1,14 +1,14 @@
 ## Running PandaUserbot
 
-__ziplink () {
+_ziplink () {
     local regex
     regex='(https?)://github.com/.+/.+'
     if [[ $PANDA_USERBOT_REPO == "PANDA_USERBOT" ]]
     then
-        echo "https://github.com/ilhammansiz/PandaX_Userbot/archive/PandaUserbot.zip"
-    elif [[ $PANDA_USERBOT_REPO == "BUKAN_USERBOT" ]]
+        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvUGFuZGFVc2VyYm90LnppcA==" | base64 -d
+    elif [[ $PANDA_USERBOT_REPO == "PANDA_USERBOT" ]]
     then
-        echo "https://github.com/ilhammansiz/PandaX_Userbot/archive/PandaUserbot.zip"
+        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvUGFuZGFVc2VyYm90LnppcA==" | base64 -d
     elif [[ $PANDA_USERBOT_REPO =~ $regex ]]
     then
         if [[ $PANDA_USERBOT_REPO_BRANCH ]]
@@ -18,25 +18,19 @@ __ziplink () {
             echo "${PANDA_USERBOT_REPO}/archive/PandaUserbot.zip"
         fi
     else
-        echo "https://github.com/ilhammansiz/PandaX_Userbot/archive/PandaUserbot.zip"
+        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvUGFuZGFVc2VyYm90LnppcA==" | base64 -d
     fi
 }
 
-__repolink () {
+_repolink () {
     local regex
     local rlink
     regex='(https?)://github.com/.+/.+'
     if [[ $UPSTREAM_REPO == "PANDA_USERBOT" ]]
     then
-        rlink=`echo "https://github.com/ilhammansiz/PandaX_Userbot"
-    elif [[ $UPSTREAM_REPO == "BUKAN_USERBOT" ]]
-    then
-        rlink=`echo "https://github.com/ilhammansiz/PandaX_Userbot"
-    elif [[ $UPSTREAM_REPO =~ $regex ]]
-    then
         rlink=`echo "${UPSTREAM_REPO}"`
     else
-        rlink=`echo "https://github.com/ilhammansiz/PandaX_Userbot"
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90" | base64 -d`
     fi
     echo "$rlink"
 }
