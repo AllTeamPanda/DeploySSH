@@ -1,6 +1,6 @@
 # Panda - UserBot
 
-ilhammansiz17/pandauserbot:docker-python
+FROM ilhammansiz17/pandauserbot:docker-python
 
 COPY . .
 
