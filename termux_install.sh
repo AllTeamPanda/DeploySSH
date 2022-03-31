@@ -6,7 +6,7 @@ _ziplink () {
     if [[ $PANDA_USERBOT_REPO == "PANDA_USERBOT" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvUGFuZGFVc2VyYm90LnppcA==" | base64 -d
-    elif [[ $PANDA_USERBOT_REPO == "PANDA_USERBOT" ]]
+    elif [[ $PANDA_USERBOT_REPO == "UTAMA_USERBOT" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvUGFuZGFVc2VyYm90LnppcA==" | base64 -d
     elif [[ $PANDA_USERBOT_REPO =~ $regex ]]
