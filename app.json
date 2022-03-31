@@ -1,35 +1,19 @@
 {
-  "name": "Pandauserbot",
-  "description": "A simple Telegram userbot based on Telethon . Maintained by IlhamMansiez ",
-  "logo": "https://telegra.ph/file/3cfda2e8353bb1569cc79.jpg",
-    "keywords": [
-    "telegram"
-  ],
-  "repository": "https://github.com/ilhammansiz/PandaX_Userbot",
-  "website": "#TODO",
-  "success_url": "#TODO",
+  "name": "Panda-Userbot",
+  "description": "[Panda-Userbot] userbot Telegram modular yang berjalan pada Python 3.9+",
+  "stack": "container",
   "env": {
-    "ALIVE_NAME": {
-      "description": "give your name",
-      "value": ""
-    },
     "API_ID": {
-      "description": "Get this value from my.telegram.org! Please do not steal",
-      "value": ""
+      "description": "Dapatkan API ID di web my.telegram.org Masukan yg APP ID Telegram",
+      "required": true
     },
     "API_HASH": {
-      "description": "Get this value from my.telegram.org! Please do not steal",
-      "value": ""
-    },
-    "SESSION": {
-      "description": "Ambil string session TELETHON KETIKA MENGAMBIL KETIK T",
-      "value": "",
+      "description": "Dapatkan API Hash di web my.telegram.org",
       "required": true
     },
     "BOT_TOKEN": {
-      "description": "Token bot ambil di @Botfather",
-      "value": "",
-      "required": true
+      "description": "Buat Bot di t.me/botfather Masukan BOT tokennya disini〔 Bila Tidak tau bisa di /skip 〕",
+      "required": false
     },
     "BOT_USERNAME": {
       "description": "Username bot di @Botfather",
@@ -41,24 +25,36 @@
       "value": "Isi id grup",
       "required": true
     },
-    "HEROKU_API": {
-      "description": "Required for updating the bot and other stuff get it from https://dashboard.heroku.com/account",
-      "value": "",
+    "SESSION": {
+      "description": "Dapatkan String Session di Grup » https://t.me/TeamSqudUserbotSupport » Lalu ketik #string",
       "required": true
     },
     "HEROKU_APP_NAME": {
-      "description": "YOUR app name ",
-      "value": "",
+      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
+      "required": true
+    },
+    "HEROKU_API": {
+      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
       "required": true
     }
   },
-      "addons": [{
+  "addons": [
+    {
     "plan": "heroku-postgresql",
-    "options": {
-      "version": "12"
+      "options": {
+        "version": "12"
+      }
     }
-  }],
-    "formation": {
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ],
+  "formation": {
     "worker": {
       "quantity": 1,
       "size": "free"
