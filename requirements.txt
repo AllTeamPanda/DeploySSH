@@ -1,5 +1,6 @@
 aiofiles
 redis
+python-decouple==3.3
 aiohttp[speedups]
 async_generator
 asyncurban
