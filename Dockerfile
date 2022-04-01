@@ -1,10 +1,6 @@
 # Panda - UserBot
 
-FROM poocongonlen/poconguserbot:buster
-
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs && \
-    npm i -g npm
+pandauserbotfile/pandauserbot:docker-python
 
 RUN git clone -b PandaUserbot https://github.com/ilhammansiz/PandaX_Userbot /home/pandauserbot/ \
     && chmod 777 /home/pandauserbot \
