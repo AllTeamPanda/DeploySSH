@@ -1,6 +1,6 @@
 # Panda - UserBot
 
-pandauserbotfile/pandauserbot:docker-python
+FROM pandauserbotfile/pandauserbot:docker-python
 
 RUN git clone -b PandaUserbot https://github.com/ilhammansiz/PandaX_Userbot /home/pandauserbot/ \
     && chmod 777 /home/pandauserbot \
