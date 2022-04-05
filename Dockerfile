@@ -1,6 +1,6 @@
 # Panda - UserBot
 
-FROM pandauserbotfile/pandauserbot:docker-repo
+FROM pandauserbotfile/pandauserbot:python202
 
 COPY . .
 
