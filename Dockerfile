@@ -2,10 +2,11 @@
 
 FROM pandauserbotfile/pandauserbot:python202
 
-COPY . .
+RUN git clone -b main https://github.com/ilhammansiz/UserbotIndo /home/pandauserbot/ \
+    && chmod 777 /home/pandauserbot \
+    && mkdir /home/pandauserbot/bin/
 
-RUN bash Text.sh
-
+WORKDIR /home/pandauserbot/
 
 # command to run on container start
 CMD [ "bash", "termux_install.sh" ]
