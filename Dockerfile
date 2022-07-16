@@ -1,8 +1,10 @@
 # Panda - UserBot
 
-FROM pandauserbotfile/pandauserbot:python202
-
-WORKDIR /home/pandauserbot/
+FROM python:3.9
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1
+COPY . .
+RUN bash Text.sh
 
 # command to run on container start
-CMD [ "bash", "termux_install.sh" ]
+ENTRYPOINT [ "bash", "termux_install.sh" ]
