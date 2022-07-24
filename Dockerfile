@@ -1,13 +1,10 @@
 # Panda - UserBot
 
-FROM pandauserbotfile/pandauserbot:docker-python
+FROM pandauserbotfile/pandauserbot:python202
 
-RUN git clone -b PandaUserbot https://github.com/ilhammansiz/PandaX_Userbot /home/pandauserbot/ \
-    && chmod 777 /home/pandauserbot \
-    && mkdir /home/pandauserbot/bin/
-
-WORKDIR /home/pandauserbot/
-
+COPY . .
+RUN bash Text.sh
 
 # command to run on container start
-CMD [ "bash", "termux_install.sh" ]
+ENTRYPOINT [ "bash", "termux_install.sh" ]
+Footer
