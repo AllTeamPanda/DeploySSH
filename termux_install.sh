@@ -84,11 +84,8 @@ _install_pandauserbot () {
     _start_install_git
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     chmod -R 755 bin
-    echo "    Starting PandaUserBot    "
-    echo "
-              Panda Userbot
-            
-    "
+    echo "Starting PandaUserBot"
+    echo "PROSES...... "
     python3 -m Panda
 }
 
