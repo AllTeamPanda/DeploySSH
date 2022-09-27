@@ -1,3 +1,4 @@
+wand
 aiofiles
 redis>=3.3.10
 python-decouple==3.3
@@ -17,7 +18,7 @@ glitch_this
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
-googletrans==4.0.0-rc1
+yt-dlp==2021.11.10.1
 gtts
 hachoir
 heroku3
@@ -34,7 +35,6 @@ Pillow
 prettytable
 prsaw
 psutil
-psycopg2
 pyfiglet
 PyGithub
 pygments
@@ -84,7 +84,14 @@ tinydb>=4.4.0
 NoteShrinker>=0.2.0
 img2pdf>=0.4.0
 filesplit
-google-trans-new>=1.1.9
+google-trans-new==1.1.9
+googletrans>=3.0.0
 pyshorteners>=1.0.1
 langdetect>=1.0.8
 faker>=6.6.2
+gpytranslate==1.4.0
+git+https://github.com/1danish-00/carbon-now-sh-api-wrapper.git
+pybase64
+pymongo[srv]
+pytgcalls==3.0.0.dev21
+emoji==1.7.0
