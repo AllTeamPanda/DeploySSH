@@ -15,7 +15,7 @@ __ziplink () {
         then
             echo "${PANDA_USERBOT_REPO}/archive/${PANDA_USERBOT_REPO_BRANCH}.zip"
         else
-            echo "${PANDA_USERBOT_REPO}/archive/PandaUserbot.zip"
+            echo "${PANDA_USERBOT_REPO}/archive/main.zip"
         fi
     else
         echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
