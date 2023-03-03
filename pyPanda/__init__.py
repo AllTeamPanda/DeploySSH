@@ -1,1 +1,1 @@
-from pypanda
+from pyPanda
