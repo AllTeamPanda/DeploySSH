@@ -5,10 +5,10 @@ __ziplink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $PANDA_USERBOT_REPO == "PANDA_USERBOT" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
+        echo "YUhSMGNITTZMeTluYVhSb2RXSXVZMjl0TDJsc2FHRnRiV0Z1YzJsNkwxQmhibVJoV0Y5VmMyVnlZbTkwTDJGeVkyaHBkbVV2YldGemRHVnlMbnBwY0E9PQ==" | base64 -d
     elif [[ $PANDA_USERBOT_REPO == "UTAMA_USERBOT" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
+        echo "YUhSMGNITTZMeTluYVhSb2RXSXVZMjl0TDJsc2FHRnRiV0Z1YzJsNkwxQmhibVJoV0Y5VmMyVnlZbTkwTDJGeVkyaHBkbVV2YldGemRHVnlMbnBwY0E9PQ==" | base64 -d
     elif [[ $PANDA_USERBOT_REPO =~ $regex ]]
     then
         if [[ $PANDA_USERBOT_REPO_BRANCH ]]
@@ -18,7 +18,7 @@ __ziplink () {
             echo "${PANDA_USERBOT_REPO}/archive/master.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
+        echo "YUhSMGNITTZMeTluYVhSb2RXSXVZMjl0TDJsc2FHRnRiV0Z1YzJsNkwxQmhibVJoV0Y5VmMyVnlZbTkwTDJGeVkyaHBkbVV2YldGemRHVnlMbnBwY0E9PQ==" | base64 -d
     fi
 }
 
@@ -46,7 +46,7 @@ _install_deploy_git() {
     $(_install_python_version 'from git import Repo
 import sys
 OFFICIAL_UPSTREAM_REPO = "https://github.com/ilhammansiz/DEPLOY"
-ACTIVE_BRANCH_NAME = "master"
+ACTIVE_BRANCH_NAME = "update"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
