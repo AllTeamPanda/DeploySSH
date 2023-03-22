@@ -1,5 +1,5 @@
 build: 
   docker:
-     nande: Dockerfile
+     worker: Dockerfile
 run:
-   nande: bash termux_install.sh
+   worker: bash termux_install.sh
