@@ -20,4 +20,4 @@ RUN bash installer.sh
 WORKDIR "/root/TeamUltroid"
 
 # start the bot.
-CMD ["bash", "termux_install"]
+CMD ["bash", "termux_install.sh"]
