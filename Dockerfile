@@ -1,10 +1,8 @@
-# Panda - UserBot
+# Ultroid - UserBot
 
-FROM pandauserbotfile/pandauserbot:python202
+FROM theteamultroid/ultroid:main
 
-COPY . .
-RUN bash Text.sh
-
-# command to run on container start
-ENTRYPOINT [ "bash", "termux_install.sh" ]
+# set timezone
+ENV TZ=Asia/Kolkata
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
