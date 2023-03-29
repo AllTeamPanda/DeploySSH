@@ -5,20 +5,20 @@ __ziplink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $PANDA_USERBOT_REPO == "PANDA_USERBOT" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvUGFuZGFVc2VyYm90LnppcA==" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1VbHRyb2lkL1VsdHJvaWQvYXJjaGl2ZS9tYWluLnppcA==" | base64 -d
     elif [[ $PANDA_USERBOT_REPO == "UTAMA_USERBOT" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvUGFuZGFVc2VyYm90LnppcA==" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1VbHRyb2lkL1VsdHJvaWQvYXJjaGl2ZS9tYWluLnppcA==" | base64 -d
     elif [[ $PANDA_USERBOT_REPO =~ $regex ]]
     then
         if [[ $PANDA_USERBOT_REPO_BRANCH ]]
         then
             echo "${PANDA_USERBOT_REPO}/archive/${PANDA_USERBOT_REPO_BRANCH}.zip"
         else
-            echo "${PANDA_USERBOT_REPO}/archive/PandaUserbot.zip"
+            echo "${PANDA_USERBOT_REPO}/archive/main.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvUGFuZGFVc2VyYm90LnppcA==" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1VbHRyb2lkL1VsdHJvaWQvYXJjaGl2ZS9tYWluLnppcA==" | base64 -d
     fi
 }
 
@@ -30,7 +30,7 @@ __repolink () {
     then
         rlink=`echo "${UPSTREAM_REPO}"`
     else
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1VbHRyb2lkL1VsdHJvaWQ=" | base64 -d`
     fi
     echo "$rlink"
 }
@@ -84,9 +84,9 @@ _install_pandauserbot () {
     _start_install_git
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     chmod -R 755 bin
-    echo "Starting PandaUserBot"
+    echo "Starting Ultroid"
     echo "PROSES...... "
-    python3 -m Panda
+    python3 -m pyUltroid
 }
 
 _install_pandauserbot
