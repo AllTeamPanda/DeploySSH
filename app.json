@@ -1,63 +1,56 @@
 {
-  "name": "Panda-Userbot",
-  "description": "[Panda-Userbot] userbot Telegram modular yang berjalan pada Python 3.9+",
-  "stack": "container",
-  "env": {
-    "API_ID": {
-      "description": "Dapatkan API ID di web my.telegram.org Masukan yg APP ID Telegram",
-      "required": true
+    "name": "Ultroid UserBot",
+    "description": "Pluggable telegram userbot, made in python using Telethon.",
+    "logo": "https://graph.org/file/031957757a4f6a5191040.jpg",
+    "keywords": [
+        "Telethon",
+        "telegram",
+        "userbot",
+        "python",
+        "ultroid"
+    ],
+    "repository": "https://github.com/TeamUltroid/Ultroid",
+    "website": "https://ultroid.tech",
+    "success_url": "https://t.me/TeamUltroid",
+    "stack": "container",
+    "env": {
+        "API_ID": {
+            "description": "You api id, from my.telegram.org or @ScrapperRoBot.",
+            "value": "", 
+            "required": false
+        },
+        "API_HASH": {
+            "description": "You api hash, from my.telegram.org or @ScrapperRoBot.",
+            "value": "",
+            "required": false
+        },
+        "SESSION": {
+            "description": "Session String (telethon or pyrogram) for your telegram user account. The userbot will NOT work without a session string!!",
+            "value": ""
+        },
+        "REDIS_URI": {
+            "description": "Redis endpoint URL, from redislabs.com",
+            "value": ""
+        },
+        "REDIS_PASSWORD": {
+            "description": "Redis endpoint password, from redislabs.com",
+            "value": ""
+        },
+        "HEROKU_API": {
+            "description": "Heroku API token. Mandatory for Heroku Deploy...",
+            "value": "",
+            "required": false
+        },
+        "HEROKU_APP_NAME": {
+            "description": "Name of your Heroku app, given in the first blank on this page. To be added if deploying to heroku ONLY.",
+            "value": "",
+            "required": false
+        }
     },
-    "API_HASH": {
-      "description": "Dapatkan API Hash di web my.telegram.org",
-      "required": true
-    },
-    "BOT_TOKEN": {
-      "description": "Buat Bot di t.me/botfather Masukan BOT tokennya disini〔 Bila Tidak tau bisa di /skip 〕",
-      "required": false
-    },
-    "BOT_USERNAME": {
-      "description": "Username bot di @Botfather",
-      "value": "",
-      "required": true
-    },
-    "PRIVATE_GROUP_BOT_API_ID": {
-      "description": "Buatlah grup telegram publik lalu masukan @MissRose_bot ketik /id, masukan id grup nya disini. contoh: -1001473548xxx",
-      "value": "Isi id grup",
-      "required": true
-    },
-    "SESSION": {
-      "description": "Dapatkan String Session di Grup » https://t.me/TeamSqudUserbotSupport » Lalu ketik #string",
-      "required": true
-    },
-    "HEROKU_APP_NAME": {
-      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
-      "required": true
-    },
-    "HEROKU_API": {
-      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
-      "required": true
+    "formation": {
+        "ultroid": {
+            "quantity": 1,
+            "size": "eco"
+        }
     }
-  },
-  "addons": [
-    {
-    "plan": "heroku-postgresql",
-      "options": {
-        "version": "12"
-      }
-    }
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/python"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-    }
-  ],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "free"
-    }
-  }
 }
