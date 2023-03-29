@@ -46,7 +46,7 @@ _install_deploy_git() {
     $(_install_python_version 'from git import Repo
 import sys
 OFFICIAL_UPSTREAM_REPO = "https://github.com/ilhammansiz/DEPLOY"
-ACTIVE_BRANCH_NAME = "PandaUserbot"
+ACTIVE_BRANCH_NAME = "patch-1"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
