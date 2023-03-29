@@ -1,1 +1,1 @@
-worker: bash termux_install.sh
+ultroid: bash termux_install.sh
