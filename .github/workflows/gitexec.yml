@@ -1,3 +1,0 @@
-chmod u+x termux_install.sh
-git update-index --chmod=+x termux_install.sh
-git commit -am termux_install.sh
