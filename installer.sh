@@ -3,12 +3,12 @@
 REPO="https://github.com/ilhammansiz/DEPLOY.git"
 CURRENT_DIR="$(pwd)"
 ENV_FILE_PATH=".env"
-DIR="/root/ilhammansiz"
+DIR="Deploy"
 
 while [ $# -gt 0 ]; do
     case "$1" in
     --dir=*)
-        DIR="${1#*=}" || DIR="/root/ilhammansiz"
+        DIR="${1#*=}" || DIR="Deploy"
         ;;
     --branch=*)
         BRANCH="${1#*=}" || BRANCH="update"
