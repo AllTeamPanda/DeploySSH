@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-REPO="https://github.com/TeamXPanda/Panda.git"
+REPO="https://github.com/ilhammansiz/DEPLOY.git"
 CURRENT_DIR="$(pwd)"
 ENV_FILE_PATH=".env"
-DIR="/root/TeamXPanda"
+DIR="/root/ilhammansiz"
 
 while [ $# -gt 0 ]; do
     case "$1" in
     --dir=*)
-        DIR="${1#*=}" || DIR="/root/TeamXPanda"
+        DIR="${1#*=}" || DIR="/root/ilhammansiz"
         ;;
     --branch=*)
-        BRANCH="${1#*=}" || BRANCH="main"
+        BRANCH="${1#*=}" || BRANCH="update"
         ;;
     --env-file=*)
         ENV_FILE_PATH="${1#*=}" || ENV_FILE_PATH=".env"
@@ -126,7 +126,7 @@ clone_repo() {
         return
     else
         if [ ! $BRANCH ]; then
-            export BRANCH="main"
+            export BRANCH="update"
         fi
         mkdir -p $DIR
         echo -e "Cloning Panda Userbot ${BRANCH}... "
