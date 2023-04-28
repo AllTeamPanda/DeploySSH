@@ -40,4 +40,10 @@ jobs:
           packages: bash cmake curl ffmpeg gcc git jq make mediainfo megatools neofetch wkhtmltopdf zip software-properties-common python3.10 python3.10-dev
           version: 1.0
 
-      
+      - name: Install Panda
+        continue-on-error: false
+        run: wget https://raw.githubusercontent.com/ilhammansiz/Deploy/update/installer.sh && chmod +x installer.sh && sudo bash installer.sh --dir="Deploy" --branch=update --env-file=".env"
+
+      - name: Run Panda
+        continue-on-error: false
+        run: sudo bash action.sh
