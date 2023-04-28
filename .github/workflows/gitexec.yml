@@ -40,12 +40,4 @@ jobs:
           packages: bash cmake curl ffmpeg gcc git jq make mediainfo megatools neofetch wkhtmltopdf zip software-properties-common python3.10 python3.10-dev
           version: 1.0
 
-      - name: Loop workflow
-        continue-on-error: false
-        run: |
-              git clone https://github.com/ilhammansiz/DEPLOY
-              cd DEPLOY || exit 1
-              echo $(date -u +%T%P) >> loop.txt
-              git add loop.txt
-              git commit -m "Workflow : Loop $(date -u +%D-%T%P)"
-              git push -u origin master
+      
