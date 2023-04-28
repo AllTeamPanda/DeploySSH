@@ -1,4 +1,4 @@
-cd Deploy && cp sample_config.env .env && ls
+cd Deploy && cp sample_config.env .env && ls && screen -S Deploy
 trap 'exit()'
 timeout --preserve-status 19500 bash termux_install.sh &
 pid=$!
