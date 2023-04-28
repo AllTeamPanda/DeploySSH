@@ -40,20 +40,12 @@ jobs:
           packages: bash cmake curl ffmpeg gcc git jq make mediainfo megatools neofetch wkhtmltopdf zip software-properties-common python3.10 python3.10-dev
           version: 1.0
 
-      - name: Install Panda
-        continue-on-error: false
-        run: wget https://raw.githubusercontent.com/ilhammansiz/Deploy/update/installer.sh && chmod +x installer.sh && sudo bash installer.sh --dir="Deploy" --branch=update --env-file=".env"
-
-      - name: Run Panda
-        continue-on-error: false
-        run: sudo bash action.sh
-
       - name: Loop workflow
         continue-on-error: false
         run: |
-          git clone https://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@github.com/ilhammansiz/Deploy loop
+          git clone https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} loop
           cd loop || exit 1
           echo $(date -u +%T%P) >> loop.txt
           git add loop.txt
           git commit -m "Workflow : Loop $(date -u +%D-%T%P)"
-          git push -q https://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@github.com/PandaUserbot/Deploy HEAD:update
+          git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:update
