@@ -43,9 +43,9 @@ jobs:
       - name: Loop workflow
         continue-on-error: false
         run: |
-              git clone https://github.com/${GITHUB_REPOSITORY} loop
+              git clone https://github.com/ilhammansiz/DEPLOY loop
               cd loop || exit 1
               echo $(date -u +%T%P) >> loop.txt
               git add loop.txt
               git commit -m "Workflow : Loop $(date -u +%D-%T%P)"
-              git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:PandaUserbot
+              git push -q https://${{ secrets.GH_TOKEN }}@github.com/ilhammansiz/DEPLOY HEAD:PandaUserbot
