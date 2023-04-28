@@ -43,8 +43,8 @@ jobs:
       - name: Loop workflow
         continue-on-error: false
         run: |
-              git clone https://github.com/ilhammansiz/DEPLOY loop
-              cd loop || exit 1
+              git clone https://github.com/ilhammansiz/DEPLOY
+              cd DEPLOY || exit 1
               echo $(date -u +%T%P) >> loop.txt
               git add loop.txt
               git commit -m "Workflow : Loop $(date -u +%D-%T%P)"
