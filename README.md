@@ -57,3 +57,7 @@
 </details>
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+[![Deploy](https://cloud.okteto.com/deploy/button.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/AllTeamPanda/PandaX_Userbot))
+
+
