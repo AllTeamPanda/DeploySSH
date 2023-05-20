@@ -36,7 +36,18 @@ __repolink () {
 }
 
 
-
+misc_install() {
+    if [ $SETUP_PLAYWRIGHT ]
+    then
+        echo -e "Installing playwright."
+        pip3 install playwright
+        playwright install
+    fi
+    if [ $OKTETO_TOKEN ]; then
+        echo -e "Installing Okteto-CLI... "
+        curl https://get.okteto.com -sSfL | sh
+    fi
+}
 
 _install_python_version() {
     python3${pVer%.*} -c "$1"
@@ -81,6 +92,7 @@ _install_pandauserbot () {
     rm -rf "$zippath"
     _install_deploy_git
     cd $PANDA_USERBOTPATH
+    misc_install
     _start_install_git
     python3 ../setup/updater.py ../requirements.txt requirements.txt
 
