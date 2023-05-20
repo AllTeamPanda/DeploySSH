@@ -49,8 +49,8 @@
 - `sudo apt install postgresql-client`
 - `pip3 install av -q --no-binary av`
 - `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
-- `git clone https://github.com/TeamXPandaUserbot/Panda`
-- `cd Panda`
+- `git clone https://github.com/AllTeamPanda/PandaX_Userbot`
+- `cd PandaX_Userbot`
 - `pip3 install --no-cache-dir -r requirements.txt`
 - `python3 exportir/start.py`
 
