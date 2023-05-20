@@ -5,10 +5,10 @@ __ziplink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $PANDA_USERBOT_REPO == "PANDA_USERBOT" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0FsbFRlYW1QYW5kYS9QYW5kYVhfVXNlcmJvdC9hcmNoaXZlL21haW4uemlw" | base64 -d
     elif [[ $PANDA_USERBOT_REPO == "UTAMA_USERBOT" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0FsbFRlYW1QYW5kYS9QYW5kYVhfVXNlcmJvdC9hcmNoaXZlL21haW4uemlw" | base64 -d
     elif [[ $PANDA_USERBOT_REPO =~ $regex ]]
     then
         if [[ $PANDA_USERBOT_REPO_BRANCH ]]
@@ -18,7 +18,7 @@ __ziplink () {
             echo "${PANDA_USERBOT_REPO}/archive/PandaUserbot.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90L2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0FsbFRlYW1QYW5kYS9QYW5kYVhfVXNlcmJvdC9hcmNoaXZlL21haW4uemlw" | base64 -d
     fi
 }
 
@@ -30,7 +30,7 @@ __repolink () {
     then
         rlink=`echo "${UPSTREAM_REPO}"`
     else
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0FsbFRlYW1QYW5kYS9QYW5kYVhfVXNlcmJvdA==" | base64 -d`
     fi
     echo "$rlink"
 }
@@ -45,7 +45,7 @@ _install_python_version() {
 _install_deploy_git() {
     $(_install_python_version 'from git import Repo
 import sys
-OFFICIAL_UPSTREAM_REPO = "https://github.com/ilhammansiz/DEPLOY"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/AllTeamPanda/DeploySSH"
 ACTIVE_BRANCH_NAME = "master"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
@@ -59,7 +59,7 @@ _start_install_git() {
     $(_run_python_code 'from git import Repo
 import sys
 OFFICIAL_UPSTREAM_REPO="'$repolink'"
-ACTIVE_BRANCH_NAME = "'$UPSTREAM_REPO_BRANCH'" or "PandaUserbot"
+ACTIVE_BRANCH_NAME = "'$UPSTREAM_REPO_BRANCH'" or "main"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
@@ -70,7 +70,7 @@ repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
 
 _install_pandauserbot () {
     local zippath
-    zippath="pandauserbot.zip"
+    zippath="main.zip"
     echo "  Downloading source code ..."
     wget -q $(__ziplink) -O "$zippath"
     echo "  Unpacking Data ..."
@@ -83,9 +83,9 @@ _install_pandauserbot () {
     cd $PANDA_USERBOTPATH
     _start_install_git
     python3 ../setup/updater.py ../requirements.txt requirements.txt
-    chmod -R 755 bin
-    echo "Starting PandaUserBot"
-    echo "PROSES...... "
+
+    echo "Running PandaX_Userbot"
+    echo "PROSES...... and Cloning...."
     python3 -m userbot
 }
 
