@@ -93,12 +93,11 @@ pytz
 python-decouple==3.3
 Pyyaml
 pyshorteners>=1.0.1
-pyshorteners>=1.0.1
 pybase64
 pyDownload
 pytube
 pysimplelog
-pytgcalls==3.0.0.dev24
+#pytgcalls==3.0.0.dev24
 
 # Q 
 qrcode
